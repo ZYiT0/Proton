@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,8 +61,16 @@
       <!-- LOADER TAB -->
       <section id="loader" class="tab-content">
         <h2>Loader</h2>
-        <button class="btn loader-btn">Load</button>
-        <button class="btn loader-btn">Fullscreen</button>
+
+        <div class="loader-input-row">
+          <input type="text" id="loader-url-input" placeholder="Enter URL to load" />
+          <button id="loader-load-btn" class="btn">Load</button>
+          <button id="loader-fullscreen-btn" class="btn">Fullscreen</button>
+        </div>
+
+        <div class="loader-iframe-container">
+          <iframe id="loader-iframe" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        </div>
       </section>
     </main>
   </div>
