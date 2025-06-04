@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proton</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Proton</h1>
+      <nav>
+        <button class="tab-btn" data-tab="home">Home</button>
+        <button class="tab-btn" data-tab="games">Games</button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+        <button class="tab-btn" data-tab="loader">Loader</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="tab-content active">
+        <h2>Welcome to Proton</h2>
+        <p>This is a multi-feature gaming web UI.</p>
+        <p>More sites: <a href="#">MySite1</a>, <a href="#">MySite2</a></p>
+      </section>
+
+      <section id="games" class="tab-content">
+        <input type="text" id="searchInput" placeholder="Search games..." />
+        <div id="gameList" class="games-grid"></div>
+
+        <h3>Add Your Own Game</h3>
+        <input type="text" id="customName" placeholder="Button Name" />
+        <input type="text" id="customURL" placeholder="Game URL" />
+        <button id="addGameBtn">Add Game</button>
+      </section>
+
+      <section id="settings" class="tab-content">
+        <h2>Settings</h2>
+
+        <label for="themeSelect">Theme:</label>
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+
+        <label for="accentSelect">Accent Color:</label>
+        <select id="accentSelect">
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+          <option value="purple">Purple</option>
+          <option value="rainbow">Rainbow</option>
+        </select>
+
+        <label for="languageSelect">Language:</label>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+        </select>
+      </section>
+
+      <section id="loader" class="tab-content">
+        <h2>Game Loader</h2>
+        <iframe id="loaderIframe" src=""></iframe>
+        <input type="text" id="iframeURL" placeholder="Enter game URL..." />
+        <button id="loadIframeBtn">Load</button>
+        <button id="fullscreenBtn">Fullscreen</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
