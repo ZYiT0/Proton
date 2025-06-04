@@ -121,6 +121,23 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 15px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Scrollbar styling for game list */
+.game-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.game-list::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+.game-list::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Game Button */
@@ -250,7 +267,9 @@ main {
 
 /* Buttons Row in settings */
 .buttons-row {
+  display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -282,25 +301,32 @@ main {
   border-color: #e53935;
 }
 
-/* Loader Tab Buttons */
-.loader-btn {
-  background: var(--btn-bg);
-  border-radius: var(--border-radius);
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  color: var(--btn-text-color);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  margin-right: 15px;
-  transition: background var(--transition-time), box-shadow var(--transition-time);
-  user-select: none;
+/* Loader Tab Buttons (use .btn class) */
+.loader-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-.loader-btn:hover {
-  background: var(--accent-color);
-  box-shadow: 0 6px 20px var(--accent-color);
-  color: #fff;
+#loader-url-input {
+  flex-grow: 1;
+  background: var(--input-bg);
+  border: 1.5px solid #444466;
+  border-radius: var(--border-radius);
+  padding: 10px 12px;
+  color: var(--input-text);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-time);
+}
+
+#loader-url-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+#loader-url-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
 }
 
 /* Smooth animations */
@@ -310,26 +336,6 @@ main {
 
 .tab-button, .btn, .game-btn {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Scrollbar styling for game list */
-.game-list {
-  max-height: 280px;
-  overflow-y: auto;
-  padding-right: 4px;
-}
-
-.game-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.game-list::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
-  border-radius: 10px;
-}
-
-.game-list::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 /* Responsive */
