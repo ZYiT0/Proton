@@ -2,71 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proton UI</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="app">
+  <div class="container">
     <header>
-      <h1>Proton</h1>
+      <h1>Proton UI</h1>
       <nav>
-        <button class="tab-btn" data-tab="home">Home</button>
-        <button class="tab-btn" data-tab="games">Games</button>
-        <button class="tab-btn" data-tab="settings">Settings</button>
-        <button class="tab-btn" data-tab="loader">Loader</button>
+        <button class="tab-button active" data-tab="home">Home</button>
+        <button class="tab-button" data-tab="games">Games</button>
+        <button class="tab-button" data-tab="settings">Settings</button>
+        <button class="tab-button" data-tab="loader">Loader</button>
       </nav>
     </header>
 
     <main>
+      <!-- HOME TAB -->
       <section id="home" class="tab-content active">
         <h2>Welcome to Proton</h2>
-        <p>This is a multi-feature gaming web UI.</p>
-        <p>More sites: <a href="#">MySite1</a>, <a href="#">MySite2</a></p>
+        <p>Use the tabs to explore features.</p>
       </section>
 
+      <!-- GAMES TAB -->
       <section id="games" class="tab-content">
-        <input type="text" id="searchInput" placeholder="Search games..." />
-        <div id="gameList" class="games-grid"></div>
+        <h2>Your Games</h2>
+        <div id="game-list" class="game-list"></div>
 
-        <h3>Add Your Own Game</h3>
-        <input type="text" id="customName" placeholder="Button Name" />
-        <input type="text" id="customURL" placeholder="Game URL" />
-        <button id="addGameBtn">Add Game</button>
+        <div class="game-add-form">
+          <input type="text" id="add-game-name" placeholder="Game Name" />
+          <input type="text" id="add-game-url" placeholder="Game URL" />
+          <input type="text" id="add-game-image" placeholder="Image URL (optional)" />
+          <button id="add-game-btn">Add Game</button>
+        </div>
       </section>
 
+      <!-- SETTINGS TAB -->
       <section id="settings" class="tab-content">
         <h2>Settings</h2>
 
-        <label for="themeSelect">Theme:</label>
-        <select id="themeSelect">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
+        <div class="setting-item">
+          <label for="accent-color-picker">Custom Accent Color:</label>
+          <input type="color" id="accent-color-picker" />
+        </div>
 
-        <label for="accentSelect">Accent Color:</label>
-        <select id="accentSelect">
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="red">Red</option>
-          <option value="purple">Purple</option>
-          <option value="rainbow">Rainbow</option>
-        </select>
+        <div class="setting-item buttons-row">
+          <button id="export-btn" class="btn">Export Settings</button>
+          <button id="import-btn" class="btn">Import Settings</button>
+          <input type="file" id="import-input" style="display:none" accept=".json" />
+        </div>
 
-        <label for="languageSelect">Language:</label>
-        <select id="languageSelect">
-          <option value="en">English</option>
-          <option value="es">Spanish</option>
-        </select>
+        <div class="setting-item">
+          <button id="reset-btn" class="btn reset-btn">Reset Settings</button>
+        </div>
       </section>
 
+      <!-- LOADER TAB -->
       <section id="loader" class="tab-content">
-        <h2>Game Loader</h2>
-        <h3> Game links should be somewhat like "https://example.com"</h3>
-        <iframe id="loaderIframe" src=""></iframe>
-        <input type="text" id="iframeURL" placeholder="Enter game URL..." />
-        <button id="loadIframeBtn">Load</button>
-        <button id="fullscreenBtn">Fullscreen</button>
+        <h2>Loader</h2>
+        <button class="btn loader-btn">Load</button>
+        <button class="btn loader-btn">Fullscreen</button>
       </section>
     </main>
   </div>
